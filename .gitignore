@@ -1,0 +1,25 @@
+# Archivos sensibles
+.env
+
+# Dependencias
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Builds y compilados
+dist/
+build/
+
+# Archivos temporales
+*.tmp
+*.swp
+
+# Configuración de editores
+.vscode/
+.idea/
+
+# Cobertura de tests
+coverage/
