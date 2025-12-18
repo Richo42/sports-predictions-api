@@ -1,73 +1,106 @@
-# ⚽ Football Analyzer
+# ⚽ Sports Predictions API
 
-Un sistema web en Node.js + Express + MongoDB que genera pronósticos simplificados de partidos de fútbol usando la API de football-data.org.
+API RESTful para generar y consultar pronósticos deportivos simplificados.
+Construida con Node.js, Express y MongoDB, integra datos externos de partidos y guarda las predicciones en una base de datos para consulta posterior.
 
-## 🚀 Instalación
+## 🚀 Características
 
-Clona el repositorio:
+- Consulta partidos por fecha desde una API externa.
+- Genera predicciones simplificadas (ejemplo: Más de 1.5 goles).
+- Valida si el partido ya existe en la base de datos antes de guardar la predicción.
+  - Si existe, reutiliza el documento almacenado.
+  - Si no existe, crea una nueva predicción.
 
-    git clone <https://github.com/tuusuario/football-analyzer.git>
-    cd football-analyzer
+- Guarda las predicciones en MongoDB evitando duplicados.
+- Devuelve resultados ordenados cronológicamente.
+- Endpoints RESTful listos para integrarse en aplicaciones frontend o móviles.
 
-Instala dependencias:
+## 📦 Instalación
 
-    npm install
+### 1. Clonar el repositorio
 
-Configura tu archivo .env:
+        git clone https://github.com/tuusuario/sports-predictions-api.git 
+        cd sports-predictions-api
 
-    FOOTBALL_DATA_KEY=tu_api_key
-    MONGO_URI=tu_conexion_mongo
-    PORT=5000
+### 2. Instalar dependencias
 
-Inicia el servidor:
+        npm install
 
-    npm start
+### 3. Configurar variables de entorno en .env
 
-## 📌 Endpoints principales
+        PORT=5000 
+        MONGO_URI=mongodb+srv://usuario:clave@cluster.mongodb.net/sports
+        API_KEY=tu_api_key_externa
 
-GET /api/analyze/:date
+### 4. Iniciar el servidor
 
-Genera pronósticos para los partidos de LaLiga en la fecha indicada.
+        node src/server.js
 
-Ejemplo:
+### 5. Verás en Consola
 
-<http://localhost:5000/api/analyze/2025-12-19>
+        🚀 Servidor corriendo en puerto 5000
+        ✅ Conectado a MongoDB
 
-Respuesta:
+## 🔗 Endpoints
 
-    [
-      {
-        "match": "Real Madrid vs Sevilla",
-        "expectedGoals": 2.8,
-        "prediction": "Más de 2.5 goles",
-        "confidence": 0.7
-      }
-    ]
+### 1. Obtener predicciones por fecha
 
-## 🛠 Tecnologías usadas
+        GET /api/analyze/:date
 
-Node.js + Express → servidor web.
+- Parámetro: date en formato YYYY-MM-DD
 
-MongoDB → almacenamiento y caché.
+  - Ejemplo:
 
-Axios → consumo de la API externa.
+            GET http://localhost:5000/api/analyze/2025-12-20
 
-football-data.org → fuente de datos de fútbol.
+  - Respuesta:
 
-## 📊 Lógica de pronóstico
+            [ 
+                { 
+                    "match": "Real Madrid CF vs Sevilla FC", 
+                    "prediction": "Pronóstico simplificado: Más de 1.5 goles", 
+                    "date": "2025-12-20T20:00:00.000Z" 
+                } 
+            ]
 
-Se calculan promedios de goles a favor de cada equipo.
+## 📂 Estructura del proyecto
 
-Se genera un pronóstico simple:
+        sports-predictions-api/ 
+        ├── src/ 
+        │   ├── server.js           # Configuración principal del servidor 
+        │   ├── routes/ 
+        │   │   └── analysisRoutes.js  # Rutas de análisis y predicciones 
+        │   ├── models/ 
+        │   │   └── Prediction.js      # Modelo de predicciones en MongoDB 
+        │   └── services/ 
+        │       └── externalData.js    # Lógica para consumir API externa 
+        ├── .env                    # Variables de entorno 
+        ├── package.json 
+        └── README.md
 
-Si la suma de promedios > 1.5 → “Más de 1.5 goles”.
+## 🏗️ Arquitectura del sistema
 
-Si no → “Menos de 1.5 goles”.
+![Flujo de validación][def]
 
-## 📌 Notas importantes
+## 🛠️  Tecnologías
 
-El plan Free de football-data.org tiene límites de peticiones muy bajos.
+- Node.js + Express → servidor y rutas REST
+- MongoDB Atlas → base de datos en la nube
+- Mongoose → ODM para definir modelos y esquemas
+- dotenv → gestión de variables de entorno
 
-Para pruebas, se recomienda usar pocas fechas y cachear resultados en MongoDB.
+## ✅ Próximos pasos
 
-Para un modelo más avanzado (últimos partidos, estadísticas detalladas), se requiere un plan superior.
+- Añadir más lógica de predicción (ejemplo: estadísticas avanzadas).
+- Implementar autenticación para proteger endpoints.
+- Desplegar en servicios como Render, Railway o Heroku.
+
+## 👨‍💻 Autor del Proyecto
+
+### Ricardo Alberto Castillo Pérez
+
+Desarrollador en transición hacia TI
+Especializado en Node.js, Express y MongoDB, con experiencia en integración de APIs externas, optimización de flujos de datos y documentación técnica clara.
+Este proyecto forma parte de mi portafolio para mostrar competencias prácticas en arquitectura backend y persistencia de datos.
+
+[def]: ./docs/flujo-validacion.png
