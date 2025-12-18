@@ -78,10 +78,6 @@ Construida con Node.js, Express y MongoDB, integra datos externos de partidos y 
         ├── package.json 
         └── README.md
 
-## 🏗️ Arquitectura del sistema
-
-![Flujo de validación][def]
-
 ## 🛠️  Tecnologías
 
 - Node.js + Express → servidor y rutas REST
@@ -102,5 +98,3 @@ Construida con Node.js, Express y MongoDB, integra datos externos de partidos y 
 Desarrollador en transición hacia TI
 Especializado en Node.js, Express y MongoDB, con experiencia en integración de APIs externas, optimización de flujos de datos y documentación técnica clara.
 Este proyecto forma parte de mi portafolio para mostrar competencias prácticas en arquitectura backend y persistencia de datos.
-
-[def]: ./docs/flujo-validacion.png
