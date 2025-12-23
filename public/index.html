@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pronósticos de Fútbol Profesional</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="color-scheme" content="dark">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <div class="brand">
+        <span class="brand__badge"></span>
+        <span class="brand__name">Dashboard</span>
+      </div>
+      <nav class="nav" aria-label="Principal">
+        <a class="nav__link is-active" href="index.html">Pronósticos</a>
+        <a class="nav__link" href="results.html">Resultados</a>
+        <a class="nav__link" href="login.html">Cuenta</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="hero container" id="pronosticos">
+      <div class="hero__content">
+        <h1 class="hero__title">Pronósticos de Fútbol Profesional</h1>
+        <p class="hero__subtitle">Insights de alto nivel con estética fintech y trazabilidad de resultados.</p>
+        <a class="btn btn--primary" href="#lista-pronosticos">Ver pronósticos</a>
+      </div>
+
+      <div class="pricing">
+        <!-- Card 1 -->
+        <article class="card">
+          <div class="card__header">
+            <div class="card__icon" aria-hidden="true">
+              <!-- Gold soccer ball icon (SVG) -->
+              <svg viewBox="0 0 64 64" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" stroke="#D4AF37" stroke-width="2">
+                  <circle cx="32" cy="32" r="30" stroke="#D4AF37" />
+                </g>
+                <g fill="#D4AF37">
+                  <polygon points="32,16 26,22 28,30 36,30 38,22" />
+                </g>
+              </svg>
+            </div>
+            <div class="card__price">
+              <span class="price__currency">$</span><span class="price__value">25</span>
+              <span class="price__meta">Por partido</span>
+            </div>
+          </div>
+          <div class="card__body">
+            <ul class="card__list">
+              <li class="card__item"><span class="dot dot--green"></span><span>Análisis de forma y xG</span></li>
+              <li class="card__item"><span class="dot dot--green"></span><span>Probabilidades y línea base</span></li>
+              <li class="card__item"><span class="dot dot--gold"></span><span>Pick verificado</span></li>
+            </ul>
+            <button class="btn btn--outline">Agregar</button>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card">
+          <div class="card__header">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" stroke="#D4AF37" stroke-width="2">
+                  <circle cx="32" cy="32" r="30" stroke="#D4AF37" />
+                </g>
+                <g fill="#D4AF37">
+                  <polygon points="32,16 26,22 28,30 36,30 38,22" />
+                </g>
+              </svg>
+            </div>
+            <div class="card__price">
+              <span class="price__currency">$</span><span class="price__value">25</span>
+              <span class="price__meta">Por partido</span>
+            </div>
+          </div>
+          <div class="card__body">
+            <ul class="card__list">
+              <li class="card__item"><span class="dot dot--green"></span><span>Riesgo y valor esperado</span></li>
+              <li class="card__item"><span class="dot dot--green"></span><span>Tendencias de mercado</span></li>
+              <li class="card__item"><span class="dot dot--gold"></span><span>Pick verificado</span></li>
+            </ul>
+            <button class="btn btn--outline">Agregar</button>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card">
+          <div class="card__header">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" stroke="#D4AF37" stroke-width="2">
+                  <circle cx="32" cy="32" r="30" stroke="#D4AF37" />
+                </g>
+                <g fill="#D4AF37">
+                  <polygon points="32,16 26,22 28,30 36,30 38,22" />
+                </g>
+              </svg>
+            </div>
+            <div class="card__price">
+              <span class="price__currency">$</span><span class="price__value">25</span>
+              <span class="price__meta">Por partido</span>
+            </div>
+          </div>
+          <div class="card__body">
+            <ul class="card__list">
+              <li class="card__item"><span class="dot dot--green"></span><span>Modelo de probabilidad</span></li>
+              <li class="card__item"><span class="dot dot--green"></span><span>Informe corto</span></li>
+              <li class="card__item"><span class="dot dot--gold"></span><span>Pick verificado</span></li>
+            </ul>
+            <button class="btn btn--outline">Agregar</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="results container" id="resultados" aria-labelledby="results-title">
+      <div class="results__header">
+        <h2 id="results-title">Resultados recientes</h2>
+        <span class="results__badge">Validaciones</span>
+      </div>
+      <ul class="results__list">
+        <li class="result">
+          <span class="check" aria-hidden="true">✔</span>
+          <span class="result__match">Real Madrid 2–1 Barcelona</span>
+          <span class="result__meta">FT • Pick ganado</span>
+        </li>
+        <li class="result">
+          <span class="check" aria-hidden="true">✔</span>
+          <span class="result__match">Liverpool 3–0 Chelsea</span>
+          <span class="result__meta">FT • Pick ganado</span>
+        </li>
+        <li class="result">
+          <span class="check" aria-hidden="true">✔</span>
+          <span class="result__match">Juventus 1–1 Milan</span>
+          <span class="result__meta">FT • Push</span>
+        </li>
+        <li class="result">
+          <span class="check" aria-hidden="true">✔</span>
+          <span class="result__match">Man City 2–0 Arsenal</span>
+          <span class="result__meta">FT • Pick ganado</span>
+        </li>
+      </ul>
+
+      <div class="results__cta">
+        <a class="btn btn--ghost" href="#lista-pronosticos">Ver historial completo</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">© 2025 Pronósticos Pro. Todos los derechos reservados.</p>
+      <div class="footer__links">
+        <a href="#privacidad">Privacidad</a>
+        <a href="#terminos">Términos</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
